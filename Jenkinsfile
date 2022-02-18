@@ -4,7 +4,8 @@ stages {
     stage('Copy Artifact') {
         steps {
             //copyArtifacts filter: '**', fingerprintArtifacts: true, projectName: 'cicd', selector: specific('$build_number')
-             copyArtifacts fingerprintArtifacts: true, projectName: 'Stage Deployment', selector: lastSuccessful()
+             //copyArtifacts fingerprintArtifacts: true, projectName: 'Stage Deployment', selector: lastSuccessful()
+             copyArtifacts fingerprintArtifacts: true, projectName: 'Stage Deployment', selector: specific('$build_number')
         }
     }
     stage('deploy the code on server'){
