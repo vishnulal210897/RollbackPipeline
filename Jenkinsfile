@@ -1,6 +1,5 @@
 pipeline {
      agent any
-
 stages {
     stage('Copy Artifact') {
         steps {
