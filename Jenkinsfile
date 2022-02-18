@@ -9,7 +9,7 @@ stages {
     }
     stage('deploy the code on server'){
         steps{
-            sh 'rm -r *'
+            sh 'rm -r /var/www/html/sample/*'
             sh 'cp -r . /var/www/html/sample/'
             sh 'rm Jenkinsfile'
         }
